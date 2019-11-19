@@ -1,0 +1,627 @@
+.cards{
+	background: blue;
+	/*height:300px;
+	width: 497px;*/
+	width: 30px;
+	height: 30px;
+	border-radius: 25px;
+	z-index: 1000;
+	/*margin-right:30px;*/
+	display: flex;
+	left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    position: absolute;
+    transition: all 2s;
+    perspective: 1000px;
+
+	
+	
+}
+.card-inner{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  /*text-align: center;*/
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+/*.cards:hover .card-inner{
+	transform: rotateY(180deg);
+}*/
+
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  perspective: 10000px;
+
+}
+.card-front>div, .card-back>div {
+  position: relative;
+  top:30px;
+  padding: 4px;
+  font-size: 15px;
+  width: 1px;
+
+  /*TODO PRECISION MODE*/
+  /*border: 1px solid black;*/
+
+  /*TODO UNHIGDED*/
+  /*word-wrap: break-word;*/
+  white-space: nowrap;
+  backface-visibility: hidden!important;
+
+}
+
+
+.card-front {
+  /*background-color: #bbb;*/
+  color: black;
+}
+
+.card-back {
+  background-color: white;
+  color: black;
+  transform: rotateY(180deg);
+}
+
+
+.hidecontainer{
+	position:absolute;
+    /*width: 497px;
+    height: 300px;*/
+  width: 30px;
+	height: 30px;
+	border-radius: 25px;
+  background: white;
+  transition:height .01s ease-in, width 2s ease-in, background .01s ease-out, border-radius 1s ease-out;
+ 
+  z-index:1000000;
+}
+
+.menuitems{
+  opacity: 0;
+  transition: opacity .5s;
+}
+.menuitems:hover {
+  opacity: 1;
+  /*transition: opacity .5s;*/
+}
+.mover{
+	background: brown;
+	width: 30px;
+	height: 30px;
+	border-radius: 25px;
+	border: 1px solid black;
+	position: absolute;
+	left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    /*top: -12px;*/
+
+    cursor: grab;
+    opacity: .2;
+    transition: opacity .5s;
+    z-index:1000000;
+}
+.flipbtn{
+  position: absolute;
+  right:0;
+ /* width: 30px;*/
+  /*height: 30px;*/
+  width: 0;
+  height: 0;
+  background: pink;
+  border-radius: 0px 0px 0px 29px;
+  z-index:10000;
+  visibility: collapse;
+}
+.newcard{
+  background: blue;
+  position: absolute;
+  left:0;
+  /*width: 30px;*/
+  /*height: 30px;*/
+
+  width: 0;
+  height: 0;
+  background: blue;
+  border-radius: 0px 0px 29px 0px;
+  z-index:100000;
+  visibility: visible;
+}
+.nextbtn{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  /*width: 40px;*/
+  /*height: 70px;*/
+  width: 0;
+  height: 0;
+  right: -20px;
+  border-radius: 9px;
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+  background: red;
+  z-index:100000;
+  visibility: collapse;
+}
+
+.prevbtn{
+  position: absolute;
+  top: 0;
+  left: -23px;
+  bottom: 0;
+  /*width: 40px;*/
+  /*height: 70px;*/
+  width: 0;
+  height: 0;
+  border-radius: 9px;
+  margin-left: : auto;
+  margin-top: auto;
+  margin-bottom: auto;
+  background: green;
+  z-index:100000;
+  visibility: collapse;
+}
+.deletemenu{
+  background: gray;
+  color:white;
+  height: 36px;
+  width: 0;
+  /*width: 202px;*/
+  position: absolute;
+  left: 0;
+  z-index: 1001;
+  perspective: 1023px;
+  transform: scale(0,0);
+  transition: transform 1.5s ease-out 1s, width 1.5s ease-out 1s;
+  top: -27px;
+  left: -7px;
+  border-radius: 129px;
+
+}
+.deleteone{
+  background: purple;
+  color: white;
+  margin: -1px 5px 2px 43px;
+  width: 70px;
+  height: 35px;
+  padding: 0;
+  border-radius: 9px;
+  border: 1px solid black;
+  transition: background 1.2s;
+  z-index: 1002;
+}
+
+/*.deletemenu > button{
+  background: purple;
+  color: white;
+  margin: 1px 5px 2px 43px;
+  width: 70px;
+  height: 35px;
+  padding: 0;
+  border-radius: 9px;
+  border: 1px solid black;
+  transition: background 1.2s;
+  display: inline-flex;
+}*/
+/*.deletemenu > button{
+  transform: scale(0,0);
+}*/
+
+
+.deleteone:hover{
+  background: mediumpurple;
+  
+}
+
+.deleteall{
+  background: purple;
+  color: white;
+  border: 1px solid black;
+  margin: -9px 3px 1px 9px;
+  padding: 0;
+  width: 70px;
+  height: 35px;
+  border-radius: 9px;
+  transition: background 1.2s;
+  z-index: 1002;
+}
+.deleteall:hover{
+  background: mediumpurple;
+  
+}
+
+.settingbtn{
+  background: purple;
+  color: white;
+  border: 1px solid black;
+  margin: -4px 2px -2px 65px;
+  padding: 0;
+  width: 70px;
+  height: 35px;
+  border-radius: 9px;
+  transition: background 1.2s;
+  z-index: 1002;
+}
+.settingbtn:hover{
+  background: mediumpurple;
+  
+}
+.savebtn{
+  background: purple;
+  color: white;
+  border: 1px solid black;
+  margin: -9px 3px 1px -31px;
+  padding: 0;
+  width: 70px;
+  height: 35px;
+  border-radius: 9px;
+  transition: background 1.2s;
+  z-index: 1002;
+}
+.savebtn:hover{
+  background: mediumpurple;
+  
+}
+
+
+.precisionmenu{
+  position: absolute;
+  right: 0;
+  margin-right: auto;
+  background: gray;
+  color:white;
+  width: 0px;
+  height: 36px;
+  z-index:1001;
+  transform: scale(0,0) rotateY(180deg);
+  transition: transform  width 1.5s ease-out 1s;
+  top: -27px;
+  right: -8px;
+}
+
+.scale{
+  transform: scale(1,1);
+  opacity: 1;
+}
+.scaler{
+  transform: rotateY(180deg) scale(1,1);
+  opacity: 1;
+}
+
+
+.precisionmode{
+  background: purple;
+  color: white;
+  border: 1px solid black;
+  margin: -9px 3px 1px 3px;
+  padding: 0;
+  width: 70px;
+  height: 35px;
+  border-radius: 9px;
+  transform: rotateY(180deg);
+  transition: background 1.2s;
+  z-index: 1002;
+}
+
+.precisionmode:hover{
+  background: mediumpurple;
+  
+}
+
+.mayhemmode{
+  background-color: purple;
+  color: white;
+  border: 1px solid black;
+  margin: 1px 5px 2px 43px;
+  width: 70px;
+  height: 35px;
+  padding: 0;
+  border-radius: 9px;
+  transform: rotateY(180deg);
+  transition: background 1.2s;
+  z-index: 1002;
+}
+
+.mayhemmode:hover{
+  background: mediumpurple;
+  
+}
+
+.loginbtn{
+  background: purple;
+  color: white;
+  border: 1px solid black;
+  margin: -3px 4px -4px 62px;
+  padding: 0;
+  width: 70px;
+  height: 35px;
+  border-radius: 9px;
+  transform: rotateY(180deg);
+  transition: background 1.2s;
+  z-index: 1002;
+}
+.loginbtn:hover{
+  background: mediumpurple;
+  
+}
+
+.displayall{
+  background: purple;
+  color: white;
+  border: 1px solid black;
+  margin: -9px 3px 1px -26px;
+  padding: 0;
+  width: 70px;
+  height: 35px;
+  border-radius: 9px;
+  transform: rotateY(180deg);
+  transition: background 1.2s;
+  z-index: 1002;
+}
+
+.displayall:hover{
+  background: mediumpurple;
+  
+}
+
+/*.precisionmenu:hover{
+  width:202px;
+}*/
+.mover:active{
+	cursor: grabbing;
+
+}
+
+.mover:hover{
+	visibility:visible;
+	opacity: 1;
+}
+
+.writearea{
+  border: 1px solid black;
+  padding-right: 30px;
+  pointer-events: none;
+}
+
+/*.writearea:before{
+  content: "enter";
+  color:white;
+  width:300px;
+  height: 200px;
+  background: lightblue;
+}
+.writearea:after{
+  content: "enter";
+  color:white;
+  width:300px;
+  height: 200px;
+  background: lightblue;
+}*/
+.open{
+  top: -12px;
+}
+.opened{
+  height:300px;
+    width:497px;
+    border-radius:0;
+  
+}
+/*.myafter::after {
+  background: pink;
+  cursor: pointer;
+  pointer-events: all;
+}*/
+
+/*.myafter:active::after {
+  content: 'test',
+  background: pink;
+  cursor: pointer;
+  pointer-events: all;
+}
+*/
+
+.myafter:focus{
+  border-color: blue;
+  background: blue;
+}
+.nextbtnafter:hover::after{
+  content:'next';
+  background:gray;
+  color:white;
+  height: 100%;
+  border-radius:0px 0px 15px 0px;
+  position:absolute;
+  right: -12px;
+  z-index:-1;
+  writing-mode:vertical-lr;
+  text-orientation: upright;
+  opacity:.9;
+
+}
+.prevbtnafter:hover::before{
+  content:'prev';
+  background:gray;
+  color:white;
+  height: 100%;
+  border-radius:0px 0px 0px 15px;
+  position:absolute;
+  left: -12px;
+  z-index:-1;
+  writing-mode:vertical-rl;
+  text-orientation: upright;
+  opacity:.9;
+
+}
+/*Ad container and log css*/
+.adcontainer{
+  background: pink;
+  position: absolute;
+  /*width: 497px;
+  height: 300px;*/
+  width: 0px;
+  height: 0px;
+  top: 0px;
+  border-radius: 25px;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  /*transition: top 2s ease 1s;*/
+  transition:height 100000s!important;
+  overflow: hidden;
+  display: none;
+   /* width: 30px;
+  height: 30px;*/
+  /*border-radius: 25px;*/
+}
+
+/*adlog init css*/
+.adcontready {
+  overflow: inherit;
+  display:inherit;
+  transition:height width  border-radius top 10000000000000s;
+}
+
+.adcontopen{
+  width: 497px;
+  height: 300px;
+  border-radius: 0px;
+  transition: height 2s;
+  transition:height width 1000000000000000000000000000000000s;
+}
+/*adlog hide for button mode*/
+.adconthide{
+  width: 30px !important;
+  height: 30px !important;
+  border-radius: 25px;
+  overflow: hidden;
+  display:none;
+}
+/*This shows the bottom display area to show 
+  messages, errors, banner ads, progressbar
+  removes otherclass js except ready
+*/
+.addislog{
+  top: 58px;
+}
+
+/*This opens the whole container to show big ads*/
+.adcontshow{
+  top: 283px;
+  height: 300px;
+}
+/*This closes the whole thing from display*/
+.adcontclose{
+  top: 0px;
+  height:0px;
+  width: 0px;
+  overflow: hidden;
+  display: none;
+}
+
+.infolog{
+  background: lightgrey;
+  position: absolute;
+  bottom: 0;
+  width: 497px;
+  height: 50px;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+.bannercont{
+  border: 1px solid pink;
+  width: 497px;
+  /*height: 40px;*/
+  height: 0px;
+  position: absolute;
+}
+.infocont{
+  border: 1px solid lime;
+  width: 497px;
+  /*height: 45px;*/
+  height: 0px;
+  padding: 10px;
+  display: inline-flex;
+  position: absolute;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 3px;
+  padding-bottom: 0px;
+  overflow: hidden;
+}
+
+
+.smallmessagecont{
+  border: 1px solid blue;
+  width: 395px;
+  height: 0px;
+  position: absolute;
+  right: 0;
+  
+}
+
+.mousedialolog{
+  width: 150px;
+  height: 150px;
+  border-radius: 15px;
+  background: darkgrey;
+  position: absolute;
+  z-index: 1000000;
+  display: inherit;
+  color: white;
+  font-size: 30px;
+  text-align: center;
+  padding-top: 30px;
+}
+.mousedialologclose{
+  width: 0px;
+  height: 0px;
+  border-radius: 0px;
+  background: darkgrey;
+  position: absolute;
+  z-index: 1000000;
+  display: none;
+}
+
+.mousediaSavelogo{
+  width: 30px;
+  height: 30px;
+  background: blue;
+  position: absolute;
+  z-index: 1000000;
+  display: inherit;
+}
+
+.progresscont{
+  border: 1px solid red;
+  width: 395px;
+  /*height: 40px;*/
+  height: 0px;
+  position: absolute;
+  right: 0;
+}
+.loginifo{
+  border: 1px solid violet;
+  width: 200px;
+  height: 40px;
+  /*height: 0px;*/
+  position: relative;
+  width: 100px;
+}
+#text{
+  border: 1px solid green;
+}
+
+grammarly-popups{
+  visibility: collapse;
+}
+
