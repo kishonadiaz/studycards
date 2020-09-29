@@ -9,12 +9,12 @@
 	/*margin-right:30px;*/
 	display: flex;
 	left: 0;
-    right: 0;
-    margin-left: auto;
-    margin-right: auto;
-    position: absolute;
-    transition: all 2s;
-    perspective: 1000px;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  position: absolute;
+  transition: all 2s;
+  perspective: 1000px;
 
 	
 	
