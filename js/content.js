@@ -1722,105 +1722,106 @@ function mainscript(html){
 
       // }
       ////console.log(item.getBoundingClientRect(),item.parentNode.getBoundingClientRect());
-      // if(getCaretPosition(item) < maxperline){
+      if(getCaretPosition(item) < maxperline){
 
-      //    subwidth = getCaretPosition(item);
-      //    for(var i of $(".writearea")){
+         subwidth = getCaretPosition(item);
+         console.log(subwidth);
+         for(var i of $(".writearea")){
 
-      //     if(i.getBoundingClientRect().width >= pars){
-      //       //alert("asdf");
+          if(i.getBoundingClientRect().width >= pars){
+            //alert("asdf");
             
-      //       if(!$(i).hasClass("myafter")){
-      //         //$(i).removeClass("myafter")
-      //         $(i).addClass("myafter:focus");
-      //         ////console.log(
-      //         i.pseudoStyle({
-      //           "classname":"myafter",
-      //           "element":"after",
-      //           "temp":`z-index:1000000;
-      //                   content:'Press Enter';
-      //                   background:rgba(173,216,230,.9);
-      //                   color:white;
-      //                   transform:translateX(30px);
-      //                   border-radius:3px
-      //                   transition:all 2s;
-      //                   position: relative;
-      //           `});
-      //         ////console.log(
-      //         // i.pseudoStyle({
-      //         //   "classname":"myafter",
-      //         //   "element":"after",
-      //         //   "attr":"focus",
-      //         //   "temp":`z-index:1000000;
-      //         //           content:'Press Enter';
-      //         //           background:rgba(173,216,230,.9);
-      //         //           color:white;
-      //         //           transform:translateX(30px);
-      //         //           border-radius:3px
-      //         //           transition:all 2s;
-      //         //           position: relative;
-      //         //   `});
-      //         //////console.log(i.pseudoStyle("myafter","after","content","'tesdft'"));
-      //         // if($(i).attr("class")=="myafter"){
-      //         //   $(i).removeClass("myafter");
-      //         // }else{
-      //         // ////console.log(i.pseudoStyle({
-      //         //   "classname":"myafter",
-      //         //   "element":"after",
-      //         //   "temp":`z-index:1000000;
-      //         //           content:'Press Enter';
-      //         //           background:rgba(173,216,230,.9);
-      //         //           color:white;
-      //         //           transform:translateX(30px);
-      //         //           border-radius:3px
-      //         //           transition:all 2s;
-      //         //           position: relative;
-      //         //   `}));
+            if(!$(i).hasClass("myafter")){
+              //$(i).removeClass("myafter")
+              $(i).addClass("myafter:focus");
+              ////console.log(
+              i.pseudoStyle({
+                "classname":"myafter",
+                "element":"after",
+                "temp":`z-index:1000000;
+                        content:'Press Enter';
+                        background:rgba(173,216,230,.9);
+                        color:white;
+                        transform:translateX(30px);
+                        border-radius:3px
+                        transition:all 2s;
+                        position: relative;
+                `});
+              ////console.log(
+              // i.pseudoStyle({
+              //   "classname":"myafter",
+              //   "element":"after",
+              //   "attr":"focus",
+              //   "temp":`z-index:1000000;
+              //           content:'Press Enter';
+              //           background:rgba(173,216,230,.9);
+              //           color:white;
+              //           transform:translateX(30px);
+              //           border-radius:3px
+              //           transition:all 2s;
+              //           position: relative;
+              //   `});
+              //////console.log(i.pseudoStyle("myafter","after","content","'tesdft'"));
+              // if($(i).attr("class")=="myafter"){
+              //   $(i).removeClass("myafter");
+              // }else{
+              // ////console.log(i.pseudoStyle({
+              //   "classname":"myafter",
+              //   "element":"after",
+              //   "temp":`z-index:1000000;
+              //           content:'Press Enter';
+              //           background:rgba(173,216,230,.9);
+              //           color:white;
+              //           transform:translateX(30px);
+              //           border-radius:3px
+              //           transition:all 2s;
+              //           position: relative;
+              //   `}));
               
-      //         // }
-      //         // ////console.log(i.pseudoStyle({
-      //         //   "classname":"myafter",
-      //         //   "element":"after",
-      //         //   "attr":"hover",
-      //         //   "temp":`content:'test';background:blue;color:white;transition:all 2s;
-      //         //   `}));
+              // }
+              // ////console.log(i.pseudoStyle({
+              //   "classname":"myafter",
+              //   "element":"after",
+              //   "attr":"hover",
+              //   "temp":`content:'test';background:blue;color:white;transition:all 2s;
+              //   `}));
 
 
 
-      //       }
-      //     }
+            }
+          }
 
           
-      //     //console.log($(i).has("focus"));
-      //     if(i.getBoundingClientRect().width > pars){
-      //       if(tars > (pars)){
-      //         ////console.log("asdfjhkjsd");
-      //         $(i).addClass("full");
-      //         stopping = true;
+          //console.log($(i).has("focus"));
+          if(i.getBoundingClientRect().width > pars){
+            if(tars > (pars)){
+              ////console.log("asdfjhkjsd");
+              $(i).addClass("full");
+              stopping = true;
 
-      //       }
-      //     }
+            }
+          }
 
-      //     if(event.which === 13){
-      //       stopping = false;
-      //       $(i).removeClass("myafter");
-      //       $(i).removeClass("typing");
-      //     }
-      //     if(event.which === 8){
-      //       stopping = false;
-      //       $(i).removeClass("myafter");
-      //       $(i).removeClass("typing");
-      //     }
+          if(event.which === 13){
+            stopping = false;
+            $(i).removeClass("myafter");
+            $(i).removeClass("typing");
+          }
+          if(event.which === 8){
+            stopping = false;
+            $(i).removeClass("myafter");
+            $(i).removeClass("typing");
+          }
           
-      //     ////console.log(($(i).text().length+i.getBoundingClientRect().width));
-      //     //i.pseudoStyle("before","content","'tesdft'").pseudoStyle("before","color","purple");
-      //     $(i).css("width",""+(($(i).text().length*6.1))+"px")
-      //     ////console.log(i);
-      //    }
-      //    //$(".writearea")
-      //    //stopping = true;
-      //    //alert("ok stop");
-      // }
+          ////console.log(($(i).text().length+i.getBoundingClientRect().width));
+          //i.pseudoStyle("before","content","'tesdft'").pseudoStyle("before","color","purple");
+          $(i).css("width",""+(($(i).text().length*6.1))+"px")
+          ////console.log(i);
+         }
+         //$(".writearea")
+         //stopping = true;
+         //alert("ok stop");
+      }
 
 
 
